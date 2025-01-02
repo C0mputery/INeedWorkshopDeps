@@ -205,7 +205,7 @@ public class PluginHandlerPatches {
                 Logger.Log($"Loading all mods with priority {priority}");
                 foreach (ulong modId in mods) {
                     Logger.Log($"Loading mod {modId}");
-                    if (!PluginSubscribed.Load((PublishedFileId_t)(modId), existingPlugins, out PluginSubscribed? result)) { return; }
+                    if (!PluginSubscribed.Load((PublishedFileId_t)(modId), existingPlugins, out PluginSubscribed? result)) { continue; }
                     __result.Add(result);
                     PluginHandler.needsHashRefresh = true;
                 }
